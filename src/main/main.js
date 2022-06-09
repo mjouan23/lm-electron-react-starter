@@ -25,6 +25,7 @@ function createWindow() {
 
 app.whenReady().then(createWindow);
 
-ipcMain.on('get-new-title', (evt, arg) => {
-    evt.sender.send('display-new-title', 'It\'s up to you!');
+ipcMain.on('get-new-title', (evt, data) => {
+    let receiveData = Array.isArray(data) ? data[0] : data;
+    evt.sender.send('display-new-title', receiveData === 0 ? 1 : 0);
 });

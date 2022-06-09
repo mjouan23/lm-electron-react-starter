@@ -2,10 +2,15 @@ import { useEffect, useState } from 'react';
 import logo from '../logo.svg';
 import './App.css';
 
+const titleText = {
+  0: 'Welcome !',
+  1: 'It\'s up to you!'
+}
+
 function App() {
-  const [title, setTitle] = useState('Welcome !')
+  const [title, setTitle] = useState(0);
   const handleClick = () => {
-    window.electron.send('get-new-title', '');
+    window.electron.send('get-new-title', title);
   }
   useEffect(() => {
     window.electron.recieve('display-new-title', (data) => {
@@ -18,7 +23,7 @@ function App() {
       <header className="App-header">
         <img id="logo" src={logo} className="App-logo" alt="logo" />
         <div className="title">
-          <h1>{title}</h1>
+          <h1>{titleText[title]}</h1>
           <img src="./potion.svg" className="App-potion" alt="potion" />
         </div>
         <p>Official Boilerplate for React Electron App</p>
