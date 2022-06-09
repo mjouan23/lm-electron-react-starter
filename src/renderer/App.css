@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #33058D;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Custom CSS */
+#logo {
+  max-width: 23rem;
+}
+.title {
+  display: flex;
+  align-items: center;
+}
+.title > img {
+  max-height: 10rem;
+}
+h1 {
+  text-transform: uppercase;
+  transform: rotate(-10deg);
+}
+a {
+  text-decoration: none;
+  color: #00A3E1;
+  cursor: pointer;
+}
+button {
+  display: block;
+  font-size: calc(2vw + 0.5rem);
+  margin-top: 1em;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: 0.2rem solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background 0.2s linear;
+}
+button:hover {
+  color: #33058D;
+  background-color: #fff;
+}
